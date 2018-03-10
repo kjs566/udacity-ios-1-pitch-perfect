@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		565356FB20540EA300857C9B /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565356FA20540EA300857C9B /* AudioPlayer.swift */; };
+		565356FF20540FB500857C9B /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565356FE20540FB500857C9B /* AudioRecorder.swift */; };
 		566573992051627600BBA84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566573982051627600BBA84D /* AppDelegate.swift */; };
 		5665739B2051627600BBA84D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665739A2051627600BBA84D /* HomeViewController.swift */; };
 		5665739E2051627600BBA84D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5665739C2051627600BBA84D /* Main.storyboard */; };
 		566573A02051627600BBA84D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5665739F2051627600BBA84D /* Assets.xcassets */; };
 		566573A32051627600BBA84D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566573A12051627600BBA84D /* LaunchScreen.storyboard */; };
+		566573AF20517FFE00BBA84D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566573AE20517FFE00BBA84D /* AboutViewController.swift */; };
+		566573B120518C6200BBA84D /* ModifyVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566573B020518C6200BBA84D /* ModifyVoiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		565356FA20540EA300857C9B /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		565356FE20540FB500857C9B /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		566573952051627600BBA84D /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566573982051627600BBA84D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5665739A2051627600BBA84D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,8 @@
 		5665739F2051627600BBA84D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		566573A22051627600BBA84D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		566573A42051627600BBA84D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		566573AE20517FFE00BBA84D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		566573B020518C6200BBA84D /* ModifyVoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyVoiceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,10 @@
 				5665739F2051627600BBA84D /* Assets.xcassets */,
 				566573A12051627600BBA84D /* LaunchScreen.storyboard */,
 				566573A42051627600BBA84D /* Info.plist */,
+				566573AE20517FFE00BBA84D /* AboutViewController.swift */,
+				566573B020518C6200BBA84D /* ModifyVoiceViewController.swift */,
+				565356FA20540EA300857C9B /* AudioPlayer.swift */,
+				565356FE20540FB500857C9B /* AudioRecorder.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -136,8 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				565356FF20540FB500857C9B /* AudioRecorder.swift in Sources */,
+				566573AF20517FFE00BBA84D /* AboutViewController.swift in Sources */,
 				5665739B2051627600BBA84D /* HomeViewController.swift in Sources */,
 				566573992051627600BBA84D /* AppDelegate.swift in Sources */,
+				566573B120518C6200BBA84D /* ModifyVoiceViewController.swift in Sources */,
+				565356FB20540EA300857C9B /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

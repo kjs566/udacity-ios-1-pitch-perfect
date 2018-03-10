@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import AVFoundation
 
-class HomeViewController: UIViewController {
+
+/// Controller for recording the sound.
+class HomeViewController: UIViewController, AVAudioRecorderDelegate  {
     @IBOutlet weak var recordStopButton: UIButton!
     
     @IBOutlet weak var hintLabel: UILabel!
     
-    static let hintRecordVoice = "Record your voice first and enjoy it's funny modifications";
-    static let hintStopRecording = "Stop recording and start modifying your voice";
+    static let hintRecordVoice = "Record your voice first and enjoy it's funny modifications.";
+    static let hintStopRecording = "Now stop recording and start modifying your voice.";
+    
+    let audioRecorder : AudioRecorder = AudioRecorder()
     
     enum RecordingState{
         case recording, not_recording
@@ -22,30 +27,22 @@ class HomeViewController: UIViewController {
     
     var currentState = RecordingState.not_recording
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
     
     /// Called before showing views, setting initial helping instruction.
-    ///
-    /// - Parameter animated:
     override func viewWillAppear(_ animated: Bool) {
         updateView();
     }
 
     
     /// Called whan recording control button is clicked
-    ///
-    /// - Parameter sender: 
     @IBAction func recordStopClicked(_ sender: Any) {
         switch(currentState){
             case .recording:
                 currentState = .not_recording
+                audioRecorder.stopRecording()
             case .not_recording:
                 currentState = .recording
-                stopRecording();
+                audioRecorder.startRecording(audioRecorderDelegate: self)
         }
         updateView()
     }
@@ -74,8 +71,28 @@ class HomeViewController: UIViewController {
         recordStopButton.setImage(image , for: .normal)
     }
     
-    func stopRecording(){
-        
+    
+    /// Called after recording is saved and performs seque to ModifyVoiceViewController
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag{
+            performSegue(withIdentifier: "stopRecording", sender: recorder.url)
+        }else{
+            print("Recording saving failed")
+        }
+    }
+    
+    
+    
+    /// Prepares the next controller and sets the back button title
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "stopRecording"{
+            let playSoundsVC = segue.destination as! ModifyVoiceViewController
+            let recordedAudioURL = sender as! URL
+            playSoundsVC.recordedAudioURL = recordedAudioURL
+        }
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
     }
 }
 
